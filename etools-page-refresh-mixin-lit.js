@@ -12,7 +12,7 @@ const EtoolsPageRefreshMixinLit = (superClass) =>
       return {
         dexieDbsNumber: Number,
         dbsAttemptedToDelete: Array,
-        refreshInProgress: Boolean,
+        refreshInProgress: Boolean
       };
     }
 
@@ -65,12 +65,7 @@ const EtoolsPageRefreshMixinLit = (superClass) =>
       db.delete()
         .catch(
           function (err) {
-            this.logError(
-              'Could not delete indexedDB: ' + dbName,
-              'etools-page-refresh-mixin',
-              err,
-              true
-            );
+            this.logError('Could not delete indexedDB: ' + dbName, 'etools-page-refresh-mixin', err, true);
           }.bind(this)
         )
         .finally(
@@ -85,9 +80,7 @@ const EtoolsPageRefreshMixinLit = (superClass) =>
       //            when the site is opened in more than one tab
       setTimeout(() => {
         if (!finished) {
-          alert(
-            'Please close any other tabs, that have this page open, for the Refresh to work properly.'
-          );
+          alert('Please close any other tabs, that have this page open, for the Refresh to work properly.');
         }
       }, 9000);
     }

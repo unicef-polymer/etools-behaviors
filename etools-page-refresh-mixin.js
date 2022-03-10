@@ -8,8 +8,8 @@ import Dexie from 'dexie';
  * @applies EtoolsLogsMixin
  */
 const EtoolsPageRefreshMixin = dedupingMixin(
-    superClass => class extends EtoolsLogsMixin(superClass) {
-
+  (superClass) =>
+    class extends EtoolsLogsMixin(superClass) {
       static get properties() {
         return {
           dexieDbsNumber: Number,
@@ -29,7 +29,8 @@ const EtoolsPageRefreshMixin = dedupingMixin(
       }
 
       refresh() {
-    if (!Dexie) { // eslint-disable-line
+        if (!Dexie) {
+          // eslint-disable-line
           this.logError('Dexie not imported', 'etools-page-refresh-mixin');
         }
 
@@ -63,12 +64,18 @@ const EtoolsPageRefreshMixin = dedupingMixin(
         // eslint-disable-next-line no-undef
         const db = new Dexie(dbName);
         let finished = false;
-        db.delete().catch(function(err) {
-          this.logError('Could not delete indexedDB: ' + dbName, 'etools-page-refresh-mixin', err, true);
-        }.bind(this)).finally(function() {
-          this.push('dbsAttemptedToDelete', dbName);
-          finished = true;
-        }.bind(this));
+        db.delete()
+          .catch(
+            function (err) {
+              this.logError('Could not delete indexedDB: ' + dbName, 'etools-page-refresh-mixin', err, true);
+            }.bind(this)
+          )
+          .finally(
+            function () {
+              this.push('dbsAttemptedToDelete', dbName);
+              finished = true;
+            }.bind(this)
+          );
         // TODO: find a better solution for this timeout
         // *In Edge - catch and finally of db.delete() are not executed,
         //            when the site is opened in more than one tab
@@ -101,7 +108,7 @@ const EtoolsPageRefreshMixin = dedupingMixin(
           }
         }
       }
-
-    });
+    }
+);
 
 export default EtoolsPageRefreshMixin;

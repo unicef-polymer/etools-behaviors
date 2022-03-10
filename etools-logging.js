@@ -1,11 +1,10 @@
-
 /**
-   * Available log levels:
-   *    OFF
-   *    ERROR
-   *    WARN
-   *    INFO
-   */
+ * Available log levels:
+ *    OFF
+ *    ERROR
+ *    WARN
+ *    INFO
+ */
 let etoolsLogsLevel = '';
 
 function _getLogLevel() {
