@@ -16,12 +16,8 @@ const EtoolsPageRefreshMixinLit = (superClass) =>
       };
     }
 
-    // static get observers() {
-    //   return ['_triggerPageRefresh(dbsAttemptedToDelete.length)'];
-    // }
-
-    ready() {
-      super.ready();
+    connectedCallback() {
+      super.connectedCallback();
       this.dexieDbsNumber = 0;
       this.dbsAttemptedToDelete = [];
     }
@@ -70,7 +66,7 @@ const EtoolsPageRefreshMixinLit = (superClass) =>
         )
         .finally(
           function () {
-            this.push('dbsAttemptedToDelete', dbName);
+            this.dbsAttemptedToDelete.push(dbName);
             this._triggerPageRefresh();
             finished = true;
           }.bind(this)
