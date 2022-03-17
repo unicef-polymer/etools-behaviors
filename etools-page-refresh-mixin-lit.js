@@ -86,11 +86,11 @@ const EtoolsPageRefreshMixinLit = (superClass) =>
       window.location.reload(true);
     }
 
-    _triggerPageRefresh(deleteAttempts) {
+    _triggerPageRefresh() {
       if (this.refreshInProgress) {
         let doRefresh = false;
         if (this.dexieDbsNumber > 0) {
-          if (deleteAttempts === this.dexieDbsNumber) {
+          if (this.dbsAttemptedToDelete.length === this.dexieDbsNumber) {
             this.clearLocalStorage();
             doRefresh = true;
           }
