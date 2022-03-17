@@ -2,6 +2,7 @@ import EtoolsLogsMixin from '../etools-logs-mixin.js';
 import '../etools-mixin-factory.js';
 
 // page refresh mixin is included here only to be seen by polymer analyzer and add it to demo interface
+/* eslint-disable-next-line */
 import EtoolsPageRefreshMixin from '../etools-page-refresh-mixin.js';
 
 import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
@@ -11,6 +12,7 @@ import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
  * @customElement
  * @appliesMixins EtoolsLogsMixin
  */
+/* eslint-disable-next-line */
 class EtoolsBehaviorsDemoHelper extends EtoolsMixinFactory.combineMixins([EtoolsLogsMixin], PolymerElement) {
   static get template() {
     // language=HTML
@@ -29,9 +31,8 @@ class EtoolsBehaviorsDemoHelper extends EtoolsMixinFactory.combineMixins([Etools
     super.ready();
     this.logError('some error msg...', null, {someObjProp: 'some data value'});
     this.logWarn('some warning msg...', 'some page section', {someObjProp: 'some data value'});
-    this.logInfo('some info msg...', null, {someObjProp: 'some data value'})
+    this.logInfo('some info msg...', null, {someObjProp: 'some data value'});
   }
 }
 
 customElements.define(EtoolsBehaviorsDemoHelper.is, EtoolsBehaviorsDemoHelper);
-
