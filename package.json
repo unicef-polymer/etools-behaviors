@@ -23,7 +23,7 @@
   "license": "https://github.com/unicef-polymer/etools-behaviors/blob/master/LICENSE.md",
   "dependencies": {
     "@polymer/polymer": "^3.4.1",
-    "dexie": "^3.0.1",
+    "dexie": "^3.2.2",
     "lit-element": "^2.5.1",
     "source-map-support": "^0.5.10"
   },
@@ -41,8 +41,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "growl": ">=1.10.0",
     "lodash": ">=4.17.21",
-    "minimist": ">=0.2.1",
-    "prismjs": ">=1.25.0",
+    "minimist": ">=1.2.6",
+    "prismjs": ">=1.27.0",
     "glob-parent": ">=5.1.2",
     "wct-browser-legacy": "^1.0.2"
   },
